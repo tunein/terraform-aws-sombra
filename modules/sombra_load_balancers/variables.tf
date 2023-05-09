@@ -125,6 +125,18 @@ variable "health_check_protocol" {
   default     = "HTTPS"
 }
 
+variable "internal_health_check_port" {
+  type        = number
+  description = "The port to use for the internal health check"
+  default     = null
+}
+
+variable "external_health_check_port" {
+  type        = number
+  description = "The port to use for the external health check"
+  default     = null
+}
+
 variable tags {
   type        = map(string)
   description = "Tags to apply to all resources that support them"

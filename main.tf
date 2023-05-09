@@ -16,10 +16,12 @@ module "load_balancer" {
   health_check_protocol = var.health_check_protocol
 
   # Ports and Firewall settings
-  internal_port         = var.internal_port
-  external_port         = var.external_port
-  transcend_backend_ips = var.transcend_backend_ips
-  incoming_cidr_ranges  = var.incoming_cidr_ranges
+  internal_port              = var.internal_port
+  external_port              = var.external_port
+  internal_health_check_port = var.internal_health_check_port
+  external_health_check_port = var.external_health_check_port
+  transcend_backend_ips      = var.transcend_backend_ips
+  incoming_cidr_ranges       = var.incoming_cidr_ranges
 
   # VPC settings
   vpc_id                      = var.vpc_id

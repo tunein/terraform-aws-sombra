@@ -467,6 +467,18 @@ variable "health_check_protocol" {
   default     = "HTTPS"
 }
 
+variable "internal_health_check_port" {
+  type        = number
+  description = "Port to use on the health check"
+  default     = null
+}
+
+variable "external_health_check_port" {
+  type        = number
+  description = "Port to use on the health check"
+  default     = null
+}
+
 variable "roles_to_assume" {
   type        = list(string)
   description = "AWS IAM Roles that sombra can assume, used in AWS integrations"

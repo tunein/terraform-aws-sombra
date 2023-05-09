@@ -53,7 +53,7 @@ module "load_balancer" {
       health_check = {
         enabled  = true
         interval = 30
-        port     = var.internal_port
+        port     = var.internal_health_check_port == null ? var.internal_port : var.internal_health_check_port
         path     = "/health"
         protocol = var.health_check_protocol
       }
@@ -67,7 +67,7 @@ module "load_balancer" {
       health_check = {
         enabled  = true
         interval = 30
-        port     = var.external_port
+        port     = var.external_health_check_port == null ? var.external_port : var.external_health_check_port
         path     = "/health"
         protocol = var.health_check_protocol
       }
